@@ -59,7 +59,7 @@ def Allreduce(x, op, comm=_MPI.COMM_WORLD, token=None, _transpose=False):
     # to be more efficient.
 
     if token is None:
-        token = create_token(x)
+        token = create_token()
 
     op = wrap_as_hashable(op)
     comm = wrap_as_hashable(comm)
